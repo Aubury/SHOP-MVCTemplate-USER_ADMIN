@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-Bold.ttf);
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-BoldItalic.ttf);
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-Italic.ttf);
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-Light.ttf);
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-LightItalic.ttf);
+    src: url(/views/css/fonts/Roboto/RobotoCondensed-Regular.ttf);
+
+}
+@font-face {
+    font-family: 'Ljk_Onyx';
+    src: url("/views/css/fonts/17669.otf");
+}
+@font-face {
+ font-family: 'FetteEgyptienne UI';
+ src: url("/views/css/fonts/18043.otf");
+
+}
+@font-face {
+    font-family: 'Cleanwork';
+    src: url("/views/css/fonts/17916.ttf");
+}
+@font-face {
+    font-family: 'Nexa Script';
+    src: url("/views/css/fonts/17896.ttf");
+}

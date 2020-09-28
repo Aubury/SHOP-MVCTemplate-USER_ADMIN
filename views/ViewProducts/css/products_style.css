@@ -1,0 +1,72 @@
+/* Стили для неактивного модального окна */
+*{
+    box-sizing: border-box;
+
+}
+#product_modal{
+    display: flex;
+    /*align-content: center;*/
+    /*align-items: center;*/
+    justify-content: center;
+    /*justify-items: center;*/
+    position: absolute;
+    font-family: 'Roboto Condensed';
+    top: -110%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background: rgba(0,0,0,0.7);
+}
+
+
+/* Активация модального окна в состоянии :target */
+#product_modal:target {
+    top: 0;
+    left: 0;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.product_modalForm{
+    background: #fff !important;
+    min-width: 1200px;
+    width: 90%;
+    height: fit-content;
+    border-radius: 5px;
+    font-size: 1.3em;
+    margin: 20px auto 50px auto;
+    box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    text-align: center;
+}
+
+.product_modalForm header, .product_modalForm footer {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+}
+.product_modalForm footer {
+    border-top: 1px solid #e7e7e7;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+.product_modalForm header, .product_modalForm footer {
+    padding: 15px;
+    z-index: 200;
+}
+.product_modalForm h3 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    color: black;
+}
+.background_white{
+    background-color: white;
+}

@@ -1,0 +1,27 @@
+
+.navigation{
+    background-color: #343a40!important;
+    font-size: 1.5em;
+    padding: .75rem;
+}
+.navigation ul{
+    margin: 0 !important;
+}
+.navigation a{
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    transition: all .3s;
+}
+.navigation a.active{
+    color: white;
+}
+.navigation .nav-item{
+    color: rgba(255,255,255,.5);
+    cursor: pointer;
+    font-style: normal;
+    padding: .5rem 1rem;
+}
+.navigation a:hover{
+    color: rgba(255,255,255,.5);
+}
+

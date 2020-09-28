@@ -1,0 +1,109 @@
+/* Стили для неактивного модального окна */
+*{
+    box-sizing: border-box;
+
+}
+#modal {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    font-family: 'Roboto Condensed';
+    top: -110%;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+}
+
+
+/* Активация модального окна в состоянии :target */
+#modal:target {
+    top: 0;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.modalForm{
+    background: #fff;
+    width: 35em;
+    border-radius: 5px;
+    font-size: 1.3em;
+    box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    text-align: center;
+}
+
+.modalForm header, .modalForm footer {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+}
+.modalForm footer {
+    border-top: 1px solid #e7e7e7;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+.modalForm header, .modalForm footer {
+    padding: 15px;
+    z-index: 200;
+}
+.modalForm h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    color: black;
+}
+.modalForm .btn {
+    cursor: pointer;
+}
+form{
+    width: 80%;
+    margin: 5px auto;
+    padding: 10px;
+}
+input{
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 2em;
+    border: 0.5px solid black;
+
+}
+input[placeholder]{
+    font-style: italic;
+    padding-left: 10px;
+    color: #949494;
+}
+.italic{
+    font-style: italic;
+}
+span.italic{
+    text-align: center !important;
+    font-size: 1.2em;
+}
+pre{
+    text-align: center !important;
+}
+#log_In{
+    cursor: pointer;
+    color: #315dff;
+}
+.password-control {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #333333b8;
+}

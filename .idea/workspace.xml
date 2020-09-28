@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc5557ce-02f6-479b-8ba2-b796c12e4040" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DrupalConfiguration">
+    <drupalPath />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="JoomlaConfiguration">
+    <joomlaConfigPath />
+    <joomlaPath />
+  </component>
+  <component name="ProjectId" id="1hHJUSFmrW8om6mL51Iqmy6KoaV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DEVELOPMENT ENVIRONMENT/WP/wordpress-5.4.2/wordpress" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.laravel_idea.plugin.extension.b.o" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewCategories\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\css" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\css" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc5557ce-02f6-479b-8ba2-b796c12e4040" name="Default Changelist" comment="" />
+      <created>1599662099436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599662099436</updated>
+      <workItem from="1599662100612" duration="10013000" />
+      <workItem from="1599715908062" duration="19937000" />
+      <workItem from="1599799925056" duration="4745000" />
+      <workItem from="1599888510949" duration="4182000" />
+      <workItem from="1599920325631" duration="3436000" />
+      <workItem from="1599930877836" duration="8320000" />
+      <workItem from="1599983989843" duration="15386000" />
+      <workItem from="1600195117381" duration="512000" />
+      <workItem from="1600791369190" duration="10314000" />
+      <workItem from="1600878523785" duration="3672000" />
+      <workItem from="1600941417935" duration="17264000" />
+      <workItem from="1601030986560" duration="23881000" />
+      <workItem from="1601120701448" duration="25573000" />
+      <workItem from="1601205449574" duration="848000" />
+      <workItem from="1601206490347" duration="15879000" />
+      <workItem from="1601303507842" duration="2564000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="95" key="#Inspections" timestamp="1601136429198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601136429198" />
+    <state x="624" y="13" key="#PHP" timestamp="1601207178152">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="13" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1601207178152" />
+    <state x="687" y="305" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600959444284">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="305" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600959444284" />
+    <state x="658" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601121188109">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="658" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601121188109" />
+    <state x="689" y="200" key="FileChooserDialogImpl" timestamp="1601206897726">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="200" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601206897726" />
+    <state x="608" y="294" key="NewPhpClassDialog" timestamp="1600952644138">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="608" y="294" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600952644138" />
+    <state x="772" y="428" key="NewPhpFileDialog" timestamp="1600798757946">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="772" y="428" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600798757946" />
+    <state x="352" y="77" key="SettingsEditor" timestamp="1601207139295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="352" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601207139295" />
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1601206309911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601206309911" />
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>D:\ПРОГРАММИРОВАНИЕ\DEVELOPMENT ENVIRONMENT\WP\wordpress-5.4.2\wordpress</wordpressPath>
+  </component>
+</project>
