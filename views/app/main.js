@@ -5,8 +5,6 @@ const objMain = {
     nav  : document.querySelectorAll('li'),
     form : document.forms,
     arr  : [],
-    arrIcDel: [],
-    arrIcEd : []
 
 }
 //---------------------------------------------------------------------------
@@ -132,70 +130,57 @@ function Delete(ev, url){
         body: fD
     }).then( response => response.text())
         .then( text => {
+            // console.log(text);
             window.location.reload();
         });
 
 }
-
 //-----------------------------------------------------------------
-function createTable(arr, table_str){
+function createTable(arr, _table, table_str){
 
-    const table = obj.table;
+    const table = _table;
     //   Удаляю всех детей!!!
     while(table.hasChildNodes()){
         table.removeChild(table.firstChild);
     }
-    // //Формирую строки
-    // let trs = "<tr><th>Delete</th><th>Edit</th><th>ID</th><th>Name</th></tr>";
-    // arr.forEach(el=>{
-    //     trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>
-    //                      <td class="iconsEd"><i class="material-icons" id="ed_${el.id}">create</i></td>
-    //                      <td>${el.id}</td><td>${el.name}</td>`;
-    // });
 
-    table.innerHTML = table_str(arr);
-
-    objMain.arrIcDel.push(document.querySelectorAll(".iconsDel"));
-    objMain.arrIcEd.push(document.querySelectorAll(".iconsEd"));
-    addListenerDelete(obj.arrIcDel[0]);
-    addListenerEdit(obj.arrIcEd[0]);
+    table.innerHTML = table_str;
 
 }
 //--------------------------------------------------------------------------------------------------
-function getMassIndexById(ev)
+function getMassIndexById(ev, arr, form)
 {
-    let arr = obj.massProducts,
-        data = '';
+    let data = '';
     if(ev.target.hasAttribute('id')){
 
         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
         arr.forEach( el => {
             if(el.id === data){
-                fillInputsForm(el);
+                fillInputsForm(el, form);
             }
 
         });
     }
 }
 //----------------------------------------------------------------------------------------------------
-function fillInputsForm(arr){
+function fillInputsForm(arr, form){
 
-    const inpArr = massInputsForm();
+    const inpArr = form;
 
     for(let i = 0; i < inpArr.length; i++){
         for (let key in arr) {
             if(inpArr[i].name === key){
-                inpArr[i].inp.value = arr[key] || inpArr[i].inp.innerHTML;
+                if(inpArr[i].inp.nodeName === "INPUT"){
+                    inpArr[i].inp.value = arr[key];
+                }else{
+                    inpArr[i].inp.innerHTML = arr[key];
+                }
             }
         }
     }
 }
 //----------------------------------------------------------------------------------------------------
-function addListenerEdit(arr){
-    for (let i = 0; i < arr.length; i++ ){
-        arr[i].addEventListener('click', getMassIndexById);
-    }
-}
+
 //-----------------------------------------------------------------------
 
 Welcome();

@@ -28,7 +28,7 @@ class ControllerCategories
     }
     public function actionDeleteCategories()
     {
-        $obj = ['name' => $_POST['name']];
+        $obj = ['id' => $_POST['id']];
 
         $this->m->DeleteCategories($obj);
     }

@@ -38,10 +38,13 @@ class ModelBrands
 //-----------------------------------------------------------------------------------------------------------------
     public function DeleteBrands($arr)
     {
-        $categories = $this->dbSelect($arr, 'name', 'brands');
 
-        if(count($categories) > 0){
-            $prp = $this->db->con->prepare("DELETE FROM `brands` WHERE `name`='{$arr['name']}')");
+        $brand = $this->dbSelect($arr, 'id', 'brands');
+
+//        var_dump($brand);
+
+        if(count($brand) > 0){
+            $prp = $this->db->con->prepare("DELETE FROM `brands` WHERE `id`='{$arr['id']}'");
             $prp->execute();
         }
     }

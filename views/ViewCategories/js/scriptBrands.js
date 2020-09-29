@@ -1,12 +1,12 @@
 let rexBrd = {
     form  : document.forms['formBrands'],
     table : document.querySelector('.tableBrands'),
-    massCtg  : [],
-    // arrIcDel: [],
-    // arrIcEd : []
+    massBrd  : [],
+    arrIcDelBrd: [],
+    arrIcEdBrd : []
 }
 //-----------------------------------------------------------------------------------------------------------------
-function massInputsForm() {
+function massInputsFormBtd() {
 
     let form = rexBrd.form;
     const inpArr = [
@@ -43,6 +43,9 @@ rexBrd.form.addEventListener('submit', function (ev) {
             rexBrd.form.name.id.value = '';
             rexBrd.form.name.value = '';
             rexBrd.form.nextElementSibling.innerHTML = data;
+            setTimeout(()=>{
+                rexBrd.form.nextElementSibling.innerHTML = '';
+            }, 500);
 
         })
 })
@@ -53,10 +56,17 @@ function getAllBrands()
         .then( data => data.json())
         // .then( arr => console.log(arr));
         .then(arr => {
-            createTable(arr, table_Brands(arr));
-            rexBrd.massCtg = arr;
+            rexBrd.massBrd = arr;
+            createTable(arr, rexBrd.table, table_Brands(arr), rexBrd.arrIcDel, rexBrd.arrIcEd);
         })
-
+        .then(data => {
+            rexBrd.arrIcDelBrd = rexBrd.table.querySelectorAll(".iconsDel");
+            rexBrd.arrIcEdBrd = rexBrd.table.querySelectorAll(".iconsEd");
+            console.log(rexBrd.arrIcDelBrd);
+            console.log(rexBrd.arrIcEdBrd);
+            addListenerDeleteBrd(rexBrd.arrIcDelBrd);
+            addListenerEditBrd(rexBrd.arrIcEdBrd);
+        })
 }
 //-------------------------------------------------------------------
 function table_Brands(arr) {
@@ -71,83 +81,9 @@ function table_Brands(arr) {
 }
 
 //-----------------------------------------------------------------
-// function createTableBrd(arr){
-//
-//     const table = rexBrd.table;
-//     //   Удаляю всех детей!!!
-//     while(table.hasChildNodes()){
-//         table.removeChild(table.firstChild);
-//     }
-//     //Формирую строки
-//     let trs = "<tr><th>Delete</th><th>Edit</th><th>ID</th><th>Name</th></tr>";
-//     arr.forEach(el=>{
-//         trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>
-//                          <td class="iconsEd"><i class="material-icons" id="ed_${el.id}">create</i></td>
-//                          <td>${el.id}</td><td>${el.name}</td>`;
-//     });
-//
-//     table.innerHTML = trs;
-//
-//     rexBrd.arrIcDel.push(document.querySelectorAll(".iconsDel"));
-//     rexBrd.arrIcEd.push(document.querySelectorAll(".iconsEd"));
-//     addListenerDelete(rexBrd.arrIcDel[0]);
-//     addListenerEdit(rexBrd.arrIcEd[0]);
-//
-// }
-//------------------------------------------------------------------------------------------------------
-// function DeleteBrands(ev){
-//
-//     const url = '/reg/delBrands',
-//         fD = new FormData();
-//     let  data = '';
-//
-//     if(ev.target.hasAttribute('id'))
-//     {
-//         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
-//     }
-//
-//     fD.append('id', data);
-//
-//     fetch(url,{
-//         method: "POST",
-//         body: fD
-//     }).then( response => response.text())
-//         .then( text => {
-//             window.location.reload();
-//         });
-//
-// }
-// //--------------------------------------------------------------------------------------------------
-// function getMassIndexById(ev)
-// {
-//     let arr = rexBrd.massCtg,
-//         data = '';
-//     if(ev.target.hasAttribute('id')){
-//
-//         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
-//         arr.forEach( el => {
-//             if(el.id === data){
-//                 fillInputsForm(el);
-//             }
-//
-//         });
-//     }
-// }
-//----------------------------------------------------------------------------------------------------
-// function fillInputsForm(arr){
-//
-//     const inpArr = massInputsForm();
-//
-//     for(let i = 0; i < inpArr.length; i++){
-//         for (let key in arr) {
-//             if(inpArr[i].name === key){
-//                 inpArr[i].inp.value = arr[key];
-//             }
-//         }
-//     }
-// }
+
 //---------------------------------------------------------------------------------------------------
-function addListenerDelete(arr){
+function addListenerDeleteBrd(arr){
     for (let i = 0; i < arr.length; i++ ){
         arr[i].addEventListener('click', (ev)=>{
             Delete(ev,'/reg/delBrands');
@@ -155,11 +91,13 @@ function addListenerDelete(arr){
     }
 }
 //----------------------------------------------------------------------------------------------------
-// function addListenerEdit(arr){
-//     for (let i = 0; i < arr.length; i++ ){
-//         arr[i].addEventListener('click', getMassIndexById);
-//     }
-// }
+function addListenerEditBrd(arr){
+    for (let i = 0; i < arr.length; i++ ){
+        arr[i].addEventListener('click', (ev)=>{
+            getMassIndexById(ev, rexBrd.massBrd, massInputsFormBtd())
+        });
+    }
+}
 //----------------------------------------------------------------------------------------------------
 getAllBrands();
 

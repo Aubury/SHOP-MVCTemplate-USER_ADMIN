@@ -13,11 +13,11 @@ let obj = {
     table     : document.querySelector('.tableProducts'),
     arr_photos: [],
     massProducts : [],
-    // arrIcDel: [],
-    // arrIcEd : []
+    arrIcDelPrd: [],
+    arrIcEdPrd : []
 };
 //-----------------------------------------------------------------------------------------------------------------
-function massInputsForm() {
+function massInputsFormPrd() {
 
     let form = obj.form;
     const inpArr = [
@@ -180,21 +180,25 @@ obj.form.addEventListener('submit', function (ev) {
     }).then( data => data.text())
         .then( data => {
             console.log(data);
-            // getAllCategories();
-            // rex.form.name.id.value = '';
-            // rex.form.name.value = '';
-            // rex.form.nextElementSibling.innerHTML = data;
+            getAllProducts();
+            let mass = obj.form.querySelectorAll('.form-control');
+            mass.forEach(el=>{
+                el.value = '';
+            })
+            obj.p_short_description.querySelector('.ck-content').innerHTML = '';
+            obj.p_full_description.querySelectorAll('.ck-content').innerHTML = '';
+            obj.form.nextElementSibling.innerHTML = data;
 
         })
 })
 //------------------------------------------------------------------------------------------------
 function table_Products(arr) {
     //Формирую строки
-    let trs = "<tr><th>Delete</th><th>Edit</th><th>ID</th><th>Name</th></tr>";
+    let trs = "<tr><th>Delete</th><th>Edit</th><th>ID</th><th>IMG</th><th>Name</th><th>Category</th><th>Brand</th><th>Price</th><th>Amount</th></tr>";
     arr.forEach(el=>{
         trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>   
-                         <td class="iconsEd"><i class="material-icons" id="ed_${el.id}">create</i></td>   
-                         <td>${el.id}</td><td>${el.name}</td>`;
+                         <td class="iconsEd"><a href="#product_modal"><i class="material-icons" id="ed_${el.id}">create</i></a></td>   
+                         <td>${el.id}</td><td>${el.main_img}</td><td>${el.name}</td><td>${el.category}</td><td>${el.brand}</td><td>${el.price}</td><td>${el.amount}</td>`;
     });
     return trs;
 }
@@ -206,89 +210,21 @@ function getAllProducts()
         .then( data => data.json())
         // .then( arr => console.log(arr));
         .then(arr => {
-            createTable(arr, table_Products(arr));
             obj.massProducts = arr;
+            createTable(arr, obj.table, table_Products(arr), obj.arrIcDel, obj.arrIcEd);
+        }).then(data =>{
+        obj.arrIcDelPrd = obj.table.document.querySelectorAll(".iconsDel");
+        obj.arrIcEdPrd = obj.table.document.querySelectorAll(".iconsEd");
+        addListenerDeletePrd(obj.arrIcDelPrd);
+        addListenerEditPrd(obj.arrIcEdPrd);
         })
 
-}
 
-// //-----------------------------------------------------------------
-// function createTable(arr, table_str){
-//
-//     const table = obj.table;
-//     //   Удаляю всех детей!!!
-//     while(table.hasChildNodes()){
-//         table.removeChild(table.firstChild);
-//     }
-//     // //Формирую строки
-//     // let trs = "<tr><th>Delete</th><th>Edit</th><th>ID</th><th>Name</th></tr>";
-//     // arr.forEach(el=>{
-//     //     trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>
-//     //                      <td class="iconsEd"><i class="material-icons" id="ed_${el.id}">create</i></td>
-//     //                      <td>${el.id}</td><td>${el.name}</td>`;
-//     // });
-//
-//     table.innerHTML = table_str(arr);
-//
-//     obj.arrIcDel.push(document.querySelectorAll(".iconsDel"));
-//     obj.arrIcEd.push(document.querySelectorAll(".iconsEd"));
-//     addListenerDelete(obj.arrIcDel[0]);
-//     addListenerEdit(obj.arrIcEd[0]);
-//
-// }
-//-------------------------------------------------------------------
-// function Delete(ev, url){
-//
-//     let  data = '',
-//         fD = new FormData();
-//
-//     if(ev.target.hasAttribute('id'))
-//     {
-//         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
-//     }
-//
-//     fD.append('id', data);
-//
-//     fetch(url,{
-//         method: "POST",
-//         body: fD
-//     }).then( response => response.text())
-//         .then( text => {
-//             window.location.reload();
-//         });
-//
-// }
-// //--------------------------------------------------------------------------------------------------
-// function getMassIndexById(ev)
-// {
-//     let arr = obj.massProducts,
-//         data = '';
-//     if(ev.target.hasAttribute('id')){
-//
-//         data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
-//         arr.forEach( el => {
-//             if(el.id === data){
-//                 fillInputsForm(el);
-//             }
-//
-//         });
-//     }
-// }
-// //----------------------------------------------------------------------------------------------------
-// function fillInputsForm(arr){
-//
-//     const inpArr = massInputsForm();
-//
-//     for(let i = 0; i < inpArr.length; i++){
-//         for (let key in arr) {
-//             if(inpArr[i].name === key){
-//                 inpArr[i].inp.value = arr[key];
-//             }
-//         }
-//     }
-// }
+}
+//-----------------------------------------------------------------
+
 //---------------------------------------------------------------------------------------------------
-function addListenerDelete(arr){
+function addListenerDeletePrd(arr){
     for (let i = 0; i < arr.length; i++ ){
         arr[i].addEventListener('click', (ev)=>{
             Delete( ev, '/reg/delProduct');
@@ -296,10 +232,13 @@ function addListenerDelete(arr){
     }
 }
 // //----------------------------------------------------------------------------------------------------
-// function addListenerEdit(arr){
-//     for (let i = 0; i < arr.length; i++ ){
-//         arr[i].addEventListener('click', getMassIndexById);
-//     }
-// }
+function addListenerEditPrd(arr){
+    for (let i = 0; i < arr.length; i++ ){
+        arr[i].addEventListener('click',(ev)=>{
+            getMassIndexById(ev, obj.massProducts, massInputsFormPrd());
+        });
+    }
+}
 getNamesCategories();
 getNamesBrands();
+getAllProducts();

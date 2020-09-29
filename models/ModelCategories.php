@@ -38,11 +38,15 @@ class ModelCategories
 //-----------------------------------------------------------------------------------------------------------------
    public function DeleteCategories($arr)
   {
-      $categories = $this->dbSelect($arr, 'name', 'categories');
+      $categories = $this->dbSelect($arr, 'id', 'categories');
+
+//      var_dump($categories);
 
       if(count($categories) > 0){
-          $prp = $this->db->con->prepare("DELETE FROM `categories` WHERE `name`='{$arr['name']}')");
+//          echo $categories[0]['id'];
+          $prp = $this->db->con->prepare("DELETE FROM `categories` WHERE `id`='{$categories[0]['id']}'");
           $prp->execute();
+
       }
   }
 //-------------------------------------------------------------------------------------------------------------------

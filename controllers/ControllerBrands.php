@@ -29,7 +29,7 @@ class ControllerBrands
     }
     public function actionDeleteBrands()
     {
-        $obj = ['name' => $_POST['name']];
+        $obj = ['id' => $_POST['id']];
 
         $this->m->DeleteBrands($obj);
     }
