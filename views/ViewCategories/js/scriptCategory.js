@@ -45,7 +45,7 @@ rex.form.addEventListener('submit', function (ev) {
             rex.form.nextElementSibling.innerHTML = data;
             setTimeout(()=>{
                 rex.form.nextElementSibling.innerHTML = '';
-            },500);
+            },10000);
 
         })
 })
@@ -62,8 +62,8 @@ function getAllCategories()
         .then(data => {
             rex.arrIcDelCtg = rex.table.querySelectorAll(".iconsDel");
             rex.arrIcEdCtg = rex.table.querySelectorAll(".iconsEd");
-            console.log(rex.arrIcDelCtg);
-            console.log(rex.arrIcEdCtg);
+            // console.log(rex.arrIcDelCtg);
+            // console.log(rex.arrIcEdCtg);
             addListenerDeleteCtg(rex.arrIcDelCtg);
             addListenerEditCtg(rex.arrIcEdCtg);
         })

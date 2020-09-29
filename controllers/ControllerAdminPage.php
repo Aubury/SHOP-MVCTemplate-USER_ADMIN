@@ -27,7 +27,7 @@ class ControllerAdminPage
     public function actionDeleteAdmin()
     {
 
-        $this->m->DeleteAdmin($_POST['email']);
+        $this->m->DeleteAdmin($_POST['id']);
     }
     public function actionTotalInfoAdmins()
     {

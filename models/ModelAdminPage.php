@@ -22,11 +22,11 @@ class ModelAdminPage
                                                       WHERE `email`='{$adm[0]['email']}'");
             $upAdm->execute();
 
-            $admin = $_COOKIE['user_id'];
-            $name = "{$arr['surname']} {$arr['name']}  {$arr['patronymic']}";
-            $action = "Данные админа- {$name}, изменены";
-            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
-            $sql->execute();
+//            $admin = $_COOKIE['user_id'];
+//            $name = "{$arr['surname']} {$arr['name']}  {$arr['patronymic']}";
+//            $action = "Данные админа- {$name}, изменены";
+//            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
+//            $sql->execute();
             echo "Изменения внесены";
 
         }else {
@@ -44,11 +44,11 @@ class ModelAdminPage
 
             $this->db->con->exec($sqlStr);
 
-            $admin = $_COOKIE['user_id'];
-            $name = "{$arr['surname']} {$arr['name']}  {$arr['patronymic']}";
-            $action = "Админ- {$name} добавлен в базу данных";
-            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
-            $sql->execute();
+//            $admin = $_COOKIE['user_id'];
+//            $name = "{$arr['surname']} {$arr['name']}  {$arr['patronymic']}";
+//            $action = "Админ- {$name} добавлен в базу данных";
+//            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
+//            $sql->execute();
 
             echo "Админ добавлен";
             $this->sendRegistrationInfo($regD);
@@ -57,25 +57,25 @@ class ModelAdminPage
 
     public function DeleteAdmin($admin)
     {
-        $sql = $this->db->con->prepare("SELECT * FROM `admins` WHERE `email` = '{$admin}'");
+        $sql = $this->db->con->prepare("SELECT * FROM `admins` WHERE `id` = '{$admin}'");
         $sql->execute();
         $bdAdm = $sql->fetchAll();
 
         if(count($bdAdm)>0){
-            $prp = $this->db->con->prepare("DELETE FROM `admins` WHERE `email` = '{$admin}'");
+            $prp = $this->db->con->prepare("DELETE FROM `admins` WHERE `id` = '{$admin}'");
             $prp->execute();
 
-            $admin = $_COOKIE['user_id'];
-            $name = "{$bdAdm[0]['surname']} {$bdAdm[0]['name']}  {$bdAdm[0]['patronymic']}";
-            $action = "Админ- {$name} удален из базы данных";
-            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
-            $sql->execute();
+//            $admin = $_COOKIE['user_id'];
+//            $name = "{$bdAdm[0]['surname']} {$bdAdm[0]['name']}  {$bdAdm[0]['patronymic']}";
+//            $action = "Админ- {$name} удален из базы данных";
+//            $sql = $this->db->con->prepare("INSERT INTO `weWatchingYou`(`id_admin`, `actions`) VALUES ('{$admin}', '{$action}')");
+//            $sql->execute();
 
 
             echo "Админ: {$bdAdm[0]['surname']} {$bdAdm[0]['name']} {$bdAdm[0]['patronymic']} удален из базы данных";
         }else{
 
-            echo "Админа с Email- {$admin} нет в базе";
+            echo "Админа с e-mail- {$bdAdm[0]['email']} нет в базе";
         }
     }
     private function sendRegistrationInfo($user)
@@ -95,7 +95,7 @@ class ModelAdminPage
         $admins = [];
         foreach ($arr as $value){
             array_push($admins,[
-
+                'id'         => $value['id'],
                 'name'       => $value['name'],
                 'patronymic' => $value['patronymic'],
                 'surname'    => $value['surname'],

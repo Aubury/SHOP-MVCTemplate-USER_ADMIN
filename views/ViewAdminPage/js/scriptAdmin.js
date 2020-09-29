@@ -13,6 +13,10 @@ function massInputsFormAdm() {
     let form = rex.formAdd;
     const inpArr = [
         {
+            inp: form['id'],
+            name: 'id',
+        },
+        {
             inp: form['name'],
             name: 'name',
         },
@@ -39,7 +43,7 @@ rex.formAdd.addEventListener('submit', function (ev) {
 
     ev.preventDefault();
 
-    let inpArr = massInp(),
+    let inpArr = massInputsFormAdm(),
             answ = {};
 
     inpArr.forEach((el) => {
@@ -61,7 +65,9 @@ function sendObj(answ) {
 
                 rex.arrInp[i].value = '';
                 getAllAdmins();
-                setTimeout(()=> {rex.formAdd.nextElementSibling.innerHTML = '';}, 10000);
+                setTimeout(()=> {
+                    rex.formAdd.nextElementSibling.innerHTML = '';
+                    }, 10000);
 
             }
         });
@@ -92,7 +98,8 @@ function sendObj(answ) {
 //-------------------------------------------------------------------------------------------------------
 function getAllAdmins()
 {
-    fetch('/inf/admins').then( data => data.json())
+    fetch('/inf/admins')
+        .then( data => data.json())
         // .then( arr => console.log(arr));
         .then(arr=>{
             rex.massAdm = arr;
@@ -100,8 +107,8 @@ function getAllAdmins()
         }).then( data =>{
             rex.arrIcDelAdm = rex.table.querySelectorAll(".iconsDel");
             rex.arrIcEdAdm = rex.table.querySelectorAll(".iconsEd");
-        addListenerDeleteAdm(rex.arrIcDelAdm);
-        addListenerEditAdm(rex.arrIcEdAdm);
+            addListenerDeleteAdm(rex.arrIcDelAdm);
+            addListenerEditAdm(rex.arrIcEdAdm);
     })
 
 }
@@ -110,8 +117,8 @@ function table_Admin(arr) {
     //Формирую строки
     let trs = "<tr><th>Delete</th><th>Edit</th><th>ФИО</th><th>Email</th><th>Последний визит</th></tr>";
     arr.forEach(el=>{
-        trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.email}">delete</i></td>   
-                         <td class="iconsEd"><i class="material-icons" id="ed_${el.email}">create</i></td>   
+        trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>   
+                         <td class="iconsEd"><i class="material-icons" id="ed_${el.id}">create</i></td>   
                          <td>${el.surname}<br>${el.name}<br>${el.patronymic}<br></td>
                          <td>${el.email}</td>
                           <td>${el.last_visit}<br></td></tr>`;
@@ -131,7 +138,6 @@ function addListenerDeleteAdm(arr){
 //----------------------------------------------------------------------------------------------------
 function addListenerEditAdm(arr){
     for (let i = 0; i < arr.length; i++ ){
-
         arr[i].addEventListener('click',(ev)=>{
             getMassIndexById(ev, rex.massAdm, massInputsFormAdm());
         });

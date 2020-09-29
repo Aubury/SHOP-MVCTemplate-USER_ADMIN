@@ -57,6 +57,7 @@
                     <div class="card-header"><h3>Добавление или редактировать администратора</h3></div>
                     <div class="card-body">
                         <form name="formAddAdmins" action="#" method="get">
+                            <p><input type="text" class="form-control"  name="id" placeholder="ID" readonly>
                             <p><input type="text" class="form-control"  name="name" placeholder="Имя">
                             <p><input type="text" class="form-control"  name="patronymic" placeholder="Отчество">
                             <p><input type="text"  class="form-control" name="surname" placeholder="Фамилия">
@@ -78,10 +79,11 @@
 
     <footer></footer>
 </div>
-
-<script><?php include_once ROOT . "/views/ViewAdminPage/js/searchAdmins.js"?></script>
-<script><?php include_once ROOT . "/views/ViewAdminPage/js/scriptAdmin.js"?></script>
 <script><?php include_once ROOT . "/views/app/main.js"?></script>
+<script><?php include_once ROOT . "/views/ViewAdminPage/js/scriptAdmin.js"?></script>
+<script><?php include_once ROOT . "/views/ViewAdminPage/js/searchAdmins.js"?></script>
+
+
 
 </body>
 </html>

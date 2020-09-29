@@ -1,0 +1,15 @@
+[29-Sep-2020 14:50:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ModelProducts::TotalProducts() in /home/qvhklqzo/shop-template.vinash.netxi.in/controllers/ControllerProducts.php:47
+Stack trace:
+#0 /home/qvhklqzo/shop-template.vinash.netxi.in/components/Router.php(45): ControllerProducts->actionTotalProducts()
+#1 /home/qvhklqzo/shop-template.vinash.netxi.in/index.php(10): Router->start()
+#2 {main}
+  thrown in /home/qvhklqzo/shop-template.vinash.netxi.in/controllers/ControllerProducts.php on line 47
+[29-Sep-2020 15:05:13 UTC] PHP Notice:  Undefined index: user_id in /home/qvhklqzo/shop-template.vinash.netxi.in/models/ModelAdminPage.php on line 47
+[29-Sep-2020 15:05:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qvhklqzo_shop.weWatchingYou' doesn't exist in /home/qvhklqzo/shop-template.vinash.netxi.in/models/ModelAdminPage.php:51
+Stack trace:
+#0 /home/qvhklqzo/shop-template.vinash.netxi.in/models/ModelAdminPage.php(51): PDOStatement->execute()
+#1 /home/qvhklqzo/shop-template.vinash.netxi.in/controllers/ControllerAdminPage.php(24): ModelAdminPage->addAdmin(Array)
+#2 /home/qvhklqzo/shop-template.vinash.netxi.in/components/Router.php(45): ControllerAdminPage->actionAddAdmin()
+#3 /home/qvhklqzo/shop-template.vinash.netxi.in/index.php(10): Router->start()
+#4 {main}
+  thrown in /home/qvhklqzo/shop-template.vinash.netxi.in/models/ModelAdminPage.php on line 51
