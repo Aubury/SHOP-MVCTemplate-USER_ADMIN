@@ -40,7 +40,7 @@ class ControllerProducts
     {
         $obj = ['id' => $_POST['id']];
 
-        $this->m->DeleteCategories($obj);
+        $this->m->DeleteProduct($obj);
     }
     public function actionTotalProducts()
     {

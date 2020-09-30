@@ -22,17 +22,20 @@ class ModelProducts
 //--------------------------------------------------------------------------------------------------------------------
    public function AddProduct($arr){
 
+        $ctg = $this->dbSelect($arr, 'name', 'categories');
+        $bnd = $this->dbSelect($arr, 'name', 'brands');
+
        if($arr['id'] == 'null') {
 
            $prp = $this->db->con->prepare("INSERT INTO `products`(`name`, `category`, `brand`, `main_img`, `img_0`, `img_1`, `img_2`, `price`, `short_description`, `full_description`, `amount`)
-                   VALUES ('{$arr['name']}', '{$arr['category']}', '{$arr['brand']}', '{$arr['main_img']}', '{$arr['img_0']}', '{$arr['img_1']}', '{$arr['img_2']}', '{$arr['price']}', '{$arr['amount']}', '{$arr['short_description']}', '{$arr['full_description']}')");
+VALUES ('{$arr['name']}', '{$ctg['id']}', '{$bnd['id']}', '{$arr['main_img']}', '{$arr['img_0']}', '{$arr['img_1']}', '{$arr['img_2']}', '{$arr['price']}', '{$arr['short_description']}', '{$arr['full_description']}', '{$arr['amount']}')");
            $prp->execute();
 
            echo "Товар создан!";
 
        }else{
 
-           $prp = $this->db->con->prepare("UPDATE `products` SET `name`='{$arr['name']}',`category`='{$arr['category']}',`brand`='{$arr['brand']}'],`main_img`='{$arr['main_img']}',`img_0`='{$arr['img_0']}',`img_1`='{$arr['img_1']}',`img_2`='{$arr['img_2']}',`price`='{$arr['price']}',`short_description`='{$arr['short_description']}',`full_description`='{$arr['full_description']}',`amount`='{$arr['amount']}'  WHERE `id`='{$arr['id']}'");
+           $prp = $this->db->con->prepare("UPDATE `products` SET `name`='{$arr['name']}',`category`='{$ctg['id']}',`brand`='{$bnd['id']}'],`main_img`='{$arr['main_img']}',`img_0`='{$arr['img_0']}',`img_1`='{$arr['img_1']}',`img_2`='{$arr['img_2']}',`price`='{$arr['price']}',`short_description`='{$arr['short_description']}',`full_description`='{$arr['full_description']}',`amount`='{$arr['amount']}'  WHERE `id`='{$arr['id']}'");
            $prp->execute();
 
            echo "Данные изменены!";
@@ -50,23 +53,48 @@ class ModelProducts
         }
     }
 //-------------------------------------------------------------------------------------------------------------------
-    public  function TotalProduct()
+function get_img_by_id($id){
+    $prp = $this->db->con->prepare("SELECT * FROM `photos` WHERE `id`='{$id}'");
+    $prp->execute();
+    $img = $prp->fetchAll();
+    $str = "{$img[0]['direction']}{$img[0]['name']}";
+
+    return $str;
+}
+//-------------------------------------------------------------------------------------------------------------------
+    function get_info_by_id($id, $table){
+
+        $prp = $this->db->con->prepare("SELECT * FROM `$table` WHERE `id`='{$id}'");
+        $prp->execute();
+        $info = $prp->fetchAll();
+        $str = "{$info[0]['name']}";
+
+        return $str;
+    }
+//-------------------------------------------------------------------------------------------------------------------
+    public  function TotalProducts()
     {
         $prp = $this->db->con->prepare("SELECT * FROM `products`");
         $prp->execute();
         $arr = $prp->fetchAll();
 
-        $categories = [];
+//        var_dump($arr);
+
+        $product = [];
         foreach ($arr as $value){
-            array_push($categories,[
+            array_push($product,[
                 'id'    => $value['id'],
                 'name'  => $value['name'],
-                'category' => $_POST['category'],
-                'brand'    => $value['brand'],
-                'main_img' => $value['main_img'],
-                'img_0'    => $value['img_0'],
-                'img_1'    => $value['img_1'],
-                'img_2'    => $value['img_2'],
+                'category' => $this->get_info_by_id($value['category'], 'categories'),
+                'brand'    => $this->get_info_by_id($value['brand'], 'brands'),
+                'main_img_id' => $value['main_img'],
+                'main_img_url' => $this->get_img_by_id($value['main_img']),
+                'img_0_id'    => $value['img_0'],
+                'img_0_url'    => $this->get_img_by_id($value['img_0']),
+                'img_1_id'    => $value['img_1'],
+                'img_1_url'    => $this->get_img_by_id($value['img_1']),
+                'img_2_id'    => $value['img_2'],
+                'img_2_url'    => $this->get_img_by_id($value['img_2']),
                 'price'    => $value['price'],
                 'amount'   => $value['amount'],
                 'short_description' => $value['short_description'],
@@ -74,6 +102,7 @@ class ModelProducts
             ]);
         }
 
-        echo json_encode($categories);
+        echo json_encode($product);
+//        var_dump($product);
     }
 }

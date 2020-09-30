@@ -35,6 +35,8 @@
     min-width: 1200px;
     width: 90%;
     height: fit-content;
+    min-height: fit-content !important;
+    height: -moz-max-content;
     border-radius: 5px;
     font-size: 1.3em;
     margin: 20px auto 50px auto;

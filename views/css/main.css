@@ -36,6 +36,9 @@ table{
     border-collapse: collapse;
     border: 1px black solid;
 }
+table a{
+    color: black;
+}
 h2, h3, h4, h5{
     text-align: center;
     margin: .5em auto;
@@ -94,9 +97,9 @@ input[placeholder], textarea[placeholder]{
     padding-left: 10px;
     color: #949494;
 }
-input[readonly]{
-    display: none;
-}
+/*input[readonly]{*/
+/*    display: none;*/
+/*}*/
 .file-field {
     position: relative;
 }

@@ -1,6 +1,7 @@
 let obj = {
     selectCategory : document.querySelector('#inputCategory'),
     selectBrand    : document.querySelector('#inputBrand'),
+    modal_windows  : document.querySelector('#product_modal'),
     form            : document.forms['formProduct'],
     form_main_photo : document.forms['main_photo'],
     form_photo_1: document.forms['photo_1'],
@@ -73,35 +74,41 @@ function massInputsFormPrd() {
 
     return inpArr;
 }
-//--------------------------------------------------------------------------------------------------
-function addOptions(arr, select, str) {
-
-    while(select.hasChildNodes()){
-        select.removeChild(select.firstChild);
-    }
-    let op = new Option(str);
-    select.append(op);
-    arr.forEach( el => {
-
-        let option = new Option(el.name, el.name);
-        select.append(option);
-    })
-}
+// //--------------------------------------------------------------------------------------------------
+// function addOptions(arr, select, str) {
+//
+//     while(select.hasChildNodes()){
+//         select.removeChild(select.firstChild);
+//     }
+//     let op = new Option(str);
+//     select.append(op);
+//     arr.forEach( el => {
+//
+//         let option = new Option(el.name, el.name);
+//         select.append(option);
+//     })
+// }
 //--------------------------------------------------------------------------------------------------
 function getNamesCategories() {
 
     const url = '/inf/Categories';
 
-    fetch(url).then(response => response.json())
-        .then(arr => addOptions(arr, obj.selectCategory, 'Выберите категорию'));
+    fetch(url)
+        .then( data => data.json())
+        .then(arr => {
+            addOptions(arr, obj.selectCategory, 'Выберите категорию');
+        });
 }
 //--------------------------------------------------------------------------------------------------
 function getNamesBrands() {
 
     const url = '/inf/brands';
 
-    fetch(url).then(response => response.json())
-        .then(arr => addOptions(arr, obj.selectBrand, 'Выберите бренд'));
+    fetch(url)
+        .then( data => data.json())
+        .then(arr => {
+            addOptions(arr, obj.selectBrand, 'Выберите бренд');
+        });
 }
 //--------------------------------------------------------------------------------------------------
 function choice_photo(form, input){
@@ -181,13 +188,25 @@ obj.form.addEventListener('submit', function (ev) {
         .then( data => {
             console.log(data);
             getAllProducts();
-            let mass = obj.form.querySelectorAll('.form-control');
+            let mass = obj.form.querySelectorAll('.form-control'),
+                img_mass = obj.modal_windows.querySelectorAll('.input-file');
             mass.forEach(el=>{
+                if(el.nodeName === 'INPUT') el.value = '';
+                if (el.nodeName === 'SELECT') el.value = 'Выберите бренд';
+
+            });
+            img_mass.forEach( el => {
                 el.value = '';
             })
-            obj.p_short_description.querySelector('.ck-content').innerHTML = '';
-            obj.p_full_description.querySelectorAll('.ck-content').innerHTML = '';
-            obj.form.nextElementSibling.innerHTML = data;
+           let text_edits = document.querySelectorAll('.ck-content');
+               text_edits.forEach( el=>{
+                   el.children.innerHTML = '';
+               })
+            obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = data;
+            setTimeout(()=>{
+                obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = '';
+            }, 1000);
+
 
         })
 })
@@ -198,7 +217,7 @@ function table_Products(arr) {
     arr.forEach(el=>{
         trs = `${trs}<tr><td class="iconsDel"><i class="material-icons" id="del_${el.id}">delete</i></td>   
                          <td class="iconsEd"><a href="#product_modal"><i class="material-icons" id="ed_${el.id}">create</i></a></td>   
-                         <td>${el.id}</td><td>${el.main_img}</td><td>${el.name}</td><td>${el.category}</td><td>${el.brand}</td><td>${el.price}</td><td>${el.amount}</td>`;
+                         <td>${el.id}</td><td class="mini_img"><img src="${el.main_img_url}"></td><td>${el.name}</td><td>${el.category}</td><td>${el.brand}</td><td>${el.price}</td><td>${el.amount}</td>`;
     });
     return trs;
 }
@@ -211,12 +230,15 @@ function getAllProducts()
         // .then( arr => console.log(arr));
         .then(arr => {
             obj.massProducts = arr;
-            createTable(arr, obj.table, table_Products(arr), obj.arrIcDel, obj.arrIcEd);
-        }).then(data =>{
-        obj.arrIcDelPrd = obj.table.document.querySelectorAll(".iconsDel");
-        obj.arrIcEdPrd = obj.table.document.querySelectorAll(".iconsEd");
-        addListenerDeletePrd(obj.arrIcDelPrd);
-        addListenerEditPrd(obj.arrIcEdPrd);
+            createTable(arr, obj.table, table_Products(arr), obj.arrIcDelPrd, obj.arrIcEd);
+        }).then(arr =>{
+            if(arr){
+                obj.arrIcDelPrd = obj.table.document.querySelectorAll(".iconsDel");
+                obj.arrIcEdPrd = obj.table.document.querySelectorAll(".iconsEd");
+                addListenerDeletePrd(obj.arrIcDelPrd);
+                addListenerEditPrd(obj.arrIcEdPrd);
+            }
+
         })
 
 

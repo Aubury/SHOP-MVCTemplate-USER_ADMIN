@@ -40,21 +40,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DEVELOPMENT ENVIRONMENT/WP/wordpress-5.4.2/wordpress" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/ViewProducts/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.laravel_idea.plugin.extension.b.o" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewCategories\js" />
-      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\css" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\css" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders\js" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewCategories\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\img" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -83,7 +84,8 @@
       <workItem from="1601205449574" duration="848000" />
       <workItem from="1601206490347" duration="15879000" />
       <workItem from="1601303507842" duration="16878000" />
-      <workItem from="1601379536397" duration="13945000" />
+      <workItem from="1601379536397" duration="20401000" />
+      <workItem from="1601453046906" duration="16141000" />
     </task>
     <servers />
   </component>

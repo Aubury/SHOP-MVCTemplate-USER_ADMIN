@@ -61,11 +61,11 @@
         <div class="f-row justify-between align-center">
             <a href="#product_modal"><button class="btn f-row justify-between align-center  p-2"><i class="medium material-icons">add</i>Добавить товар&nbsp;</button></a>
             <div class="col-4 p-2">
-                <input onkeyup="tableSearch()" class="form-control mr-sm-3" id="searchProduct" type="search" placeholder="Поиск по таблице" aria-label="Search">
+                <input onkeyup="tableSearchProduct()" class="form-control mr-sm-3" id="searchProduct" type="search" placeholder="Поиск по таблице" aria-label="Search">
             </div>
         </div>
 
-        <div class="col-9 border-warning">
+        <div class="col border-warning">
             <table class="tableProducts w_100"></table>
         </div>
 
@@ -77,7 +77,7 @@
                     <h3>Добавление или редактировать Товара</h3><
                 </header>
                 <!----------------Add Product------------------------>
-                <div class="padding-horizontal">
+                <div class="padding-horizontal block_forms">
                 <div class="f-row justify-around padding-vertical">
                     <div class="w_45 f-col">
                         <div class="w_100">
@@ -86,7 +86,7 @@
                                 <div class="file-field input-field">
                                     <div class="btn">
                                         <span>File</span>
-                                        <input type="file">
+                                        <input type="file" class="">
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input  name="img_url" class="input-file file-path validate" type="text" placeholder="Загрузите файл">
@@ -190,11 +190,13 @@
                     <hr>
                     <h6>Полное описание</h6>
                     <p id="full_description"><textarea id="editor_2" name="full_description" class="form-control"></textarea></p>
+<!--                    <p id="full_description" class="ckeditor"><textarea id="ck_texteditor" name="full_description" class="form-control"></textarea></p>-->
+
                 </div>
                 <p class="col-12 col-xl-12"> <button class="btn btn-block btn-success" type="submit">Добавить / Редактировать</button></p>
                 </form>
-                <span class="italic"></span>
                 </div>
+                <span class="italic"></span>
                 <footer class="footer">
                     <a href="#" class="f-row justify-center align-center"><i class="material-icons">close</i>Закрыть</a>
                 </footer>
@@ -208,10 +210,20 @@
 </div>
 <script><?php include_once ROOT . "/views/app/main.js" ?></script>
 <script><?php include_once ROOT . "/views/ViewProducts/js/scriptProduct.js" ?></script>
+<script><?php include_once ROOT . "/views/ViewProducts/js/searchProducts.js" ?></script>
+
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+<!--<script src="//cdn.ckeditor.com/4.4.7/standard-all/ckeditor.js"></script>-->
+<!--<script src="http://cdn.ckeditor.com/4.4.7/standard-all/adapters/jquery.js"></script>-->
+<!---->
+<!--<script>--><?php //include_once ROOT . "/views/app/jquery.js" ?><!--</script>-->
+
+
 
 <script>
     ClassicEditor

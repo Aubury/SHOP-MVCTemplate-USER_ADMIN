@@ -112,6 +112,20 @@ const inpFocus = function addListenerInput(){
 }
 
 //---------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+function addOptions(arr, select, str) {
+
+    while(select.hasChildNodes()){
+        select.removeChild(select.firstChild);
+    }
+    let op = new Option(str);
+    select.append(op);
+    arr.forEach( el => {
+
+        let option = new Option(el.name, el.name);
+        select.append(option);
+    })
+}
 //-------------------------------------------------------------------
 function Delete(ev, url){
 
