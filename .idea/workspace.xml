@@ -15,16 +15,26 @@
   <component name="DrupalConfiguration">
     <drupalPath />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SHOP-MVCTemplate-USER_ADMIN" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Aubury/SHOP-MVCTemplate-USER_ADMIN.git" />
+      </set>
+    </option>
   </component>
   <component name="JoomlaConfiguration">
     <joomlaConfigPath />
@@ -42,9 +52,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views/ViewProducts/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.laravel_idea.plugin.extension.b.o" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewCategories\js" />
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\css" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\css" />
@@ -52,11 +68,10 @@
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders\js" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\SHOP-MVCTemplate-USER_ADMIN\views\ViewOrders" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewProducts\js" />
-      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\ViewCategories\js" />
-      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\TEMPLATES\SHOP-MVCTemplate-USER_ADMIN\views\img" />
-    </key>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_CLASSES,ALPHA_COMPARATOR,HIDE_INHERITED_FROM_OBJECT" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,18 +100,35 @@
       <workItem from="1601206490347" duration="15879000" />
       <workItem from="1601303507842" duration="16878000" />
       <workItem from="1601379536397" duration="20401000" />
-      <workItem from="1601453046906" duration="16141000" />
+      <workItem from="1601453046906" duration="19049000" />
+      <workItem from="1601553194029" duration="4577000" />
+      <workItem from="1601636229476" duration="18275000" />
+      <workItem from="1601724016341" duration="7430000" />
+      <workItem from="1601753675597" duration="2264000" />
+      <workItem from="1601795885478" duration="17720000" />
+      <workItem from="1601899325093" duration="23362000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="95" key="#Inspections" timestamp="1601136429198">
+    <state x="452" y="95" key="#Inspections" timestamp="1601555609563">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601136429198" />
+    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601555609563" />
     <state x="624" y="13" key="#PHP" timestamp="1601207178152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -113,10 +145,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="200" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601206897726" />
-    <state x="608" y="294" key="NewPhpClassDialog" timestamp="1600952644138">
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1601913765285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="608" y="294" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600952644138" />
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
+    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1601913765285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
+    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1601913765285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
+    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1601913765285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
+    <state x="608" y="294" key="NewPhpClassDialog" timestamp="1601797558936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="608" y="294" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601797558936" />
     <state x="772" y="428" key="NewPhpFileDialog" timestamp="1600798757946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -125,10 +173,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601207139295" />
-    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1601206309911">
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1601636762349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601206309911" />
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601636762349" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>D:\ПРОГРАММИРОВАНИЕ\DEVELOPMENT ENVIRONMENT\WP\wordpress-5.4.2\wordpress</wordpressPath>

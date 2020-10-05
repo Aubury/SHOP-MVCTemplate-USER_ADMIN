@@ -41,6 +41,30 @@ class ControllerPhoto
         }
 
     }
+    public function actionUpload()
+    {
+
+        // если была произведена отправка формы
+        if(isset($_FILES['file'])) {
+            // проверяем, можно ли загружать изображение
+            $check = $this->m->Can_upload($_FILES['file']);
+
+            if ($check === true) {
+                $img_url = $_FILES['file']['name'];
+                $tmp_name_img= $_FILES['file']['tmp_name'];
+                $size_img = $_FILES['file']['size'];
+                $image_info = getimagesize($_FILES["file"]["tmp_name"]);
+                $width_height = $image_info[0]." x ".$image_info[1];
+
+                $this->m->upload($img_url, $tmp_name_img, $size_img, $width_height);
+
+            } else {
+                // выводим сообщение об ошибке
+                echo "<strong>$check</strong>";
+            }
+        }
+
+    }
     public function actionDelPhoto()
     {
         $this->m->DelPhoto($_POST['id']);

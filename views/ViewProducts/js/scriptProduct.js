@@ -3,16 +3,18 @@ let obj = {
     selectBrand    : document.querySelector('#inputBrand'),
     modal_windows  : document.querySelector('#product_modal'),
     form            : document.forms['formProduct'],
-    form_main_photo : document.forms['main_photo'],
-    form_photo_1: document.forms['photo_1'],
-    form_photo_2: document.forms['photo_2'],
-    form_photo_3: document.forms['photo_3'],
+    form_main_photo : document.forms['main_img'],
+    form_photo_1: document.forms['img_0'],
+    form_photo_2: document.forms['img_1'],
+    form_photo_3: document.forms['img_2'],
     inp_img   : document.forms['formProduct'].querySelectorAll('.arr_img'),
-    p_short_description : document.querySelector('#short_description'),
-    p_full_description : document.querySelector('#full_description'),
+    short_description : document.querySelector('#short_description'),
+    full_description : document.querySelector('#full_description'),
     arrInp    : document.querySelectorAll(".form-control"),
     table     : document.querySelector('.tableProducts'),
-    arr_photos: [],
+    arr_photos:  [],
+    arr_product: [],
+    arr_edit  : [],
     massProducts : [],
     arrIcDelPrd: [],
     arrIcEdPrd : []
@@ -63,31 +65,25 @@ function massInputsFormPrd() {
             name: 'amount',
         },
         {
-            inp: obj.p_short_description.querySelector('.ck-content'),
+            inp: form['short_description'],
             name: 'short_description',
         },
         {
-            inp: obj.p_full_description.querySelector('.ck-content'),
+            inp: form['full_description'],
             name: 'full_description',
-        }
+        },
+        // {
+        //     inp: obj.p_short_description.querySelector('.ck-content'),
+        //     name: 'short_description',
+        // },
+        // {
+        //     inp: obj.p_full_description.querySelector('.ck-content'),
+        //     name: 'full_description',
+        // }
     ];
 
     return inpArr;
 }
-// //--------------------------------------------------------------------------------------------------
-// function addOptions(arr, select, str) {
-//
-//     while(select.hasChildNodes()){
-//         select.removeChild(select.firstChild);
-//     }
-//     let op = new Option(str);
-//     select.append(op);
-//     arr.forEach( el => {
-//
-//         let option = new Option(el.name, el.name);
-//         select.append(option);
-//     })
-// }
 //--------------------------------------------------------------------------------------------------
 function getNamesCategories() {
 
@@ -146,8 +142,6 @@ obj.form_photo_3.addEventListener('submit', (ev)=>{
     ev.preventDefault();
     choice_photo(obj.form_photo_3, obj.form['img_2']);
 })
-
-
 //--------------------------------------------------------------------------------------------------
 obj.form.addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -163,8 +157,10 @@ obj.form.addEventListener('submit', function (ev) {
         img_2 = obj.form['img_2'].value,
         price = obj.form['price'].value,
         amount = obj.form['amount'].value,
-        short_description = obj.p_short_description.querySelector('.ck-content').innerHTML,
-        full_description  = obj.p_full_description.querySelector('.ck-content').innerHTML,
+        short_description = obj.form['short_description'].value,
+        full_description  = obj.form['full_description'].value,
+        // short_description = obj.p_short_description.querySelector('.ck-content').innerHTML,
+        // full_description  = obj.p_full_description.querySelector('.ck-content').innerHTML,
         fD = new FormData();
 
     fD.append('id', id)
@@ -193,15 +189,17 @@ obj.form.addEventListener('submit', function (ev) {
             mass.forEach(el=>{
                 if(el.nodeName === 'INPUT') el.value = '';
                 if (el.nodeName === 'SELECT') el.value = 'Выберите бренд';
+                if(el.nodeName === 'TEXTAREA') el.value = '';
 
             });
             img_mass.forEach( el => {
                 el.value = '';
             })
-           let text_edits = document.querySelectorAll('.ck-content');
-               text_edits.forEach( el=>{
-                   el.children.innerHTML = '';
-               })
+
+           // let text_edits = document.querySelectorAll('.ck-content');
+           //     text_edits.forEach( el=>{
+           //         el.children.innerHTML = '';
+           //     })
             obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = data;
             setTimeout(()=>{
                 obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = '';
@@ -222,28 +220,91 @@ function table_Products(arr) {
     return trs;
 }
 //--------------------------------------------------------------------------------------------------
-
 function getAllProducts()
 {
     fetch('/inf/products')
         .then( data => data.json())
         // .then( arr => console.log(arr));
         .then(arr => {
-            obj.massProducts = arr;
-            createTable(arr, obj.table, table_Products(arr), obj.arrIcDelPrd, obj.arrIcEd);
+            obj.massProducts = arr[0];
+            obj.arr_photos = arr[1];
+            obj.arr_product = arr[2];
+            obj.arr_edit = arr[3];
+            createTable(arr[0], obj.table, table_Products(arr[0]));
         }).then(arr =>{
-            if(arr){
-                obj.arrIcDelPrd = obj.table.document.querySelectorAll(".iconsDel");
-                obj.arrIcEdPrd = obj.table.document.querySelectorAll(".iconsEd");
+
+                obj.arrIcDelPrd = obj.table.querySelectorAll(".iconsDel");
+                obj.arrIcEdPrd = obj.table.querySelectorAll(".iconsEd");
                 addListenerDeletePrd(obj.arrIcDelPrd);
                 addListenerEditPrd(obj.arrIcEdPrd);
-            }
 
         })
 
 
 }
-//-----------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+function getMassIndexByIdPrd(ev) {
+    let data = '';
+    if(ev.target.hasAttribute('id')){
+
+        data = ev.target.id.slice(ev.target.id.indexOf('_')+1);
+        obj.massProducts.forEach( el => {
+            if(el.id === data){
+                fillInputsFormPrd(el);
+            }
+
+        });
+    }
+}
+//----------------------------------------------------------------------------------------------------
+function fillInputsFormPrd(arr) {
+
+    let inpArr = massInputsFormPrd(),
+        mass_photo_forms = [obj.form_main_photo, obj.form_photo_1, obj.form_photo_2, obj.form_photo_3],
+        formProduct = obj.form,
+        text_edits = document.querySelectorAll('.ck-content'),
+        arr_photos = obj.arr_photos,
+        arr_product = obj.arr_product,
+        arr_edit = [arr['short_description'], arr['full_description']];
+
+
+    mass_photo_forms.forEach(el => {
+        for (let key in arr) {
+            if (key.slice(0, -4) === el.name) {
+                el.querySelector('.mini_img').innerHTML = `<img src=${arr[key]}>`;
+            }
+        }
+    })
+
+
+    for (let i = 0; i < inpArr.length; i++) {
+        for (let key in arr) {
+            if (inpArr[i].name === key) {
+                if (inpArr[i].inp.nodeName === "INPUT" || inpArr[i].inp.nodeName === "SELECT") {
+                    inpArr[i].inp.value = arr[key];
+                }
+                if(key === 'short_description'){
+                    tinymce.get("short_description").setContent(arr[key]);
+
+                }
+                if(key === 'full_description'){
+                    tinymce.get("full_description").setContent(arr[key]);
+
+                }
+            }
+        }
+    }
+    // for (let i = 0; i < text_edits.length; i++){
+    //     while(text_edits[i].hasChildNodes()){
+    //         text_edits[i].removeChild(text_edits[i].firstChild);
+    //     }
+    //     text_edits[i].innerHTML = arr_edit[i];
+    // }
+
+}
+
+
+//----------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------
 function addListenerDeletePrd(arr){
@@ -257,10 +318,47 @@ function addListenerDeletePrd(arr){
 function addListenerEditPrd(arr){
     for (let i = 0; i < arr.length; i++ ){
         arr[i].addEventListener('click',(ev)=>{
-            getMassIndexById(ev, obj.massProducts, massInputsFormPrd());
+            getMassIndexByIdPrd(ev);
         });
     }
 }
+//--------------------------Editor----------------------------------------------------------------------
+function createEditor() {
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor_1' ), {
+    //         toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+    //         language: 'ru',
+    //         heading: {
+    //             options: [
+    //                 { model: 'paragraph', title: 'Параграф', class: 'ck-heading_paragraph' },
+    //                 { model: 'heading1', view: 'h1', title: 'Заголовок 1', class: 'ck-heading_heading1' },
+    //                 { model: 'heading2', view: 'h2', title: 'Заголовок 2', class: 'ck-heading_heading2' },
+    //                 { model: 'heading3', view: 'h2', title: 'Заголовок 3', class: 'ck-heading_heading3' },
+    //                 { model: 'heading4', view: 'h2', title: 'Заголовок 4', class: 'ck-heading_heading4' },
+    //
+    //             ]
+    //         }
+    //     } )
+    //     .catch( error => {
+    //         console.log( error );
+    //     } );
+    ClassicEditor
+        .create( document.querySelector( '#editor_1' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+    ClassicEditor
+        .create( document.querySelector( '#editor_2' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+    ClassicEditor.builtinPlugins.map( plugin => plugin.pluginName );
+}
+
+//------------------------End_Editor---------------------------------------------------------------------
 getNamesCategories();
 getNamesBrands();
 getAllProducts();
+// createEditor();

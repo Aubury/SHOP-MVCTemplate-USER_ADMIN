@@ -87,6 +87,23 @@ function get_img_by_id($id){
                 'name'  => $value['name'],
                 'category' => $this->get_info_by_id($value['category'], 'categories'),
                 'brand'    => $this->get_info_by_id($value['brand'], 'brands'),
+                'main_img' => $value['main_img'],
+                'main_img_url' => $this->get_img_by_id($value['main_img']),
+                'img_0'    => $value['img_0'],
+                'img_0_url'    => $this->get_img_by_id($value['img_0']),
+                'img_1'    => $value['img_1'],
+                'img_1_url'    => $this->get_img_by_id($value['img_1']),
+                'img_2'    => $value['img_2'],
+                'img_2_url'    => $this->get_img_by_id($value['img_2']),
+                'price'    => $value['price'],
+                'amount'   => $value['amount'],
+                'short_description' => $value['short_description'],
+                'full_description'  => $value['full_description']
+            ]);
+        }
+        $mass_photos = [];
+        foreach ($arr as $value){
+            array_push($mass_photos,[
                 'main_img_id' => $value['main_img'],
                 'main_img_url' => $this->get_img_by_id($value['main_img']),
                 'img_0_id'    => $value['img_0'],
@@ -95,14 +112,32 @@ function get_img_by_id($id){
                 'img_1_url'    => $this->get_img_by_id($value['img_1']),
                 'img_2_id'    => $value['img_2'],
                 'img_2_url'    => $this->get_img_by_id($value['img_2']),
+            ]);
+        }
+        $product_form = [];
+        foreach ($arr as $value){
+            array_push($product_form,[
+                'id'    => $value['id'],
+                'name'  => $value['name'],
+                'category' => $this->get_info_by_id($value['category'], 'categories'),
+                'brand'    => $this->get_info_by_id($value['brand'], 'brands'),
+                'main_img_id' => $value['main_img'],
+                'img_0_id'    => $value['img_0'],
+                'img_1_id'    => $value['img_1'],
+                'img_2_id'    => $value['img_2'],
                 'price'    => $value['price'],
                 'amount'   => $value['amount'],
+            ]);
+        }
+        $mass_text_edits = [];
+        foreach ($product as $value){
+            array_push($mass_text_edits,[
                 'short_description' => $value['short_description'],
                 'full_description'  => $value['full_description']
             ]);
         }
 
-        echo json_encode($product);
+        echo json_encode([$product, $mass_photos, $product_form, $mass_text_edits]);
 //        var_dump($product);
     }
 }

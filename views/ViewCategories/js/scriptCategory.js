@@ -62,8 +62,6 @@ function getAllCategories()
         .then(data => {
             rex.arrIcDelCtg = rex.table.querySelectorAll(".iconsDel");
             rex.arrIcEdCtg = rex.table.querySelectorAll(".iconsEd");
-            // console.log(rex.arrIcDelCtg);
-            // console.log(rex.arrIcEdCtg);
             addListenerDeleteCtg(rex.arrIcDelCtg);
             addListenerEditCtg(rex.arrIcEdCtg);
         })

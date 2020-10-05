@@ -12,6 +12,7 @@ return[
     "reg/addBrands"    => "Brands/AddBrands/adm",
     "reg/delBrands"    => "Brands/DeleteBrands/adm",
     "reg/addPhoto"     => "Photo/AddPhoto/adm",
+    "reg/upload"       => "Photo/Upload/adm",
 
 
     "show/Users"     => "UserPage/ShowUsersPage/adm",

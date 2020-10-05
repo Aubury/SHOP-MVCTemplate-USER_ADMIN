@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style><?php include_once ROOT . "/views/css/reset.css" ?></style>
-
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,13 +12,18 @@
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
     <!--Import materialize.css-->
 <!--    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>-->
+    <link rel="stylesheet" href="/views/css/reset.css">
+    <link rel="stylesheet" href="/views/css/fonts.css">
+    <link rel="stylesheet" href="/views/css/main.css">
+    <link rel="stylesheet" href="/views/css/style.css">
+    <link rel="stylesheet" href="/views/css/navigation.css">
+    <link rel="stylesheet" href="/views/ViewProducts/css/products_style.css">
 
-
-    <style><?php include_once ROOT . "/views/css/fonts.css" ?></style>
-    <style><?php include_once ROOT . "/views/css/main.css" ?></style>
-    <style><?php include_once ROOT . "/views/css/style.css" ?></style>
-    <style><?php include_once ROOT . "/views/css/navigation.css" ?></style>
-    <style><?php include_once ROOT . "/views/ViewProducts/css/products_style.css" ?></style>
+<!--    <style>--><?php //include_once ROOT . "/views/css/fonts.css" ?><!--</style>-->
+<!--    <style>--><?php //include_once ROOT . "/views/css/main.css" ?><!--</style>-->
+<!--    <style>--><?php //include_once ROOT . "/views/css/style.css" ?><!--</style>-->
+<!--    <style>--><?php //include_once ROOT . "/views/css/navigation.css" ?><!--</style>-->
+<!--    <style>--><?php //include_once ROOT . "/views/ViewProducts/css/products_style.css" ?><!--</style>-->
 
 
     <title>Товары</title>
@@ -81,7 +84,7 @@
                 <div class="f-row justify-around padding-vertical">
                     <div class="w_45 f-col">
                         <div class="w_100">
-                            <form name="main_photo" action="#" method="post" enctype="multipart/form-data">
+                            <form name="main_img" action="#" method="post" enctype="multipart/form-data">
                                 <h6>Добавить главное фото</h6>
                                 <div class="file-field input-field">
                                     <div class="btn">
@@ -102,7 +105,7 @@
                         </div>
                         <hr>
                         <div class="w_100">
-                            <form name="photo_1" action="#" method="post" enctype="multipart/form-data">
+                            <form name="img_0" action="#" method="post" enctype="multipart/form-data">
                                 <h6>Добавить фото 1</h6>
                                 <div class="file-field input-field">
                                     <div class="btn">
@@ -123,7 +126,7 @@
                         </div>
                         <hr>
                         <div class="w_100">
-                            <form name="photo_2" action="#" method="post" enctype="multipart/form-data">
+                            <form name="img_1" action="#" method="post" enctype="multipart/form-data">
                                 <h6>Добавить фото 2</h6>
                                 <div class="file-field input-field">
                                     <div class="btn">
@@ -144,7 +147,7 @@
                         </div>
                         <hr>
                         <div class="w_100">
-                            <form name="photo_3" action="#" method="post" enctype="multipart/form-data">
+                            <form name="img_2" action="#" method="post" enctype="multipart/form-data">
                                 <h6>Добавить фото 3</h6>
                                 <div class="file-field input-field">
                                     <div class="btn">
@@ -186,13 +189,12 @@
                 </div>
                 <div class="f-col">
                     <h6>Короткое описание</h6>
-                    <p id="short_description"><textarea id="editor_1" name="short_description" class="form-control"></textarea></p>
+                    <p class="short_description"><textarea id="short_description" name="short_description" class="form-control"></textarea></p>
+
                     <hr>
                     <h6>Полное описание</h6>
-                    <p id="full_description"><textarea id="editor_2" name="full_description" class="form-control"></textarea></p>
-<!--                    <p id="full_description" class="ckeditor"><textarea id="ck_texteditor" name="full_description" class="form-control"></textarea></p>-->
-
-                </div>
+                    <p class="full_description"><textarea id="full_description" name="full_description" class="form-control"></textarea></p>
+                 </div>
                 <p class="col-12 col-xl-12"> <button class="btn btn-block btn-success" type="submit">Добавить / Редактировать</button></p>
                 </form>
                 </div>
@@ -202,41 +204,50 @@
                 </footer>
              </div>
         </div>
-
-
-     </main>
-    <!---------------------------------->
+    </main>
     <footer></footer>
 </div>
-<script><?php include_once ROOT . "/views/app/main.js" ?></script>
-<script><?php include_once ROOT . "/views/ViewProducts/js/scriptProduct.js" ?></script>
-<script><?php include_once ROOT . "/views/ViewProducts/js/searchProducts.js" ?></script>
+<script src="/views/app/jquery.js"></script>
+<script src="/views/app/jquery-3.5.1.min.map"></script>
 
+
+<script src="/views/app/main.js"></script>
+<script src="/views/ViewProducts/js/scriptProduct.js"></script>
+<script src="/views/ViewProducts/js/searchProducts.js"></script>
+
+<!-------------------------------------------tinymce----------------------------------------------------->
+<script src="https://cdn.tiny.cloud/1/45q0o2oub796vpxe4reygthebztziv75t3ggikp8evbhrzvk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#short_description',
+        language: 'ru',
+        browser_spellcheck: true,
+        plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        init_instance_callback : function(editor) {
+            console.log('Editor: ' + editor.id + ' is now initialized.');
+        }
+    });
+    tinymce.init({
+        selector: '#full_description',
+        language: 'ru',
+        browser_spellcheck: true,
+        plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        init_instance_callback : function(editor) {
+            console.log('Editor: ' + editor.id + ' is now initialized.');
+        }
+    });
+</script>
+<!----------------------------------------end tinymce-------------------------------------------------------->
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
-
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-<!--<script src="//cdn.ckeditor.com/4.4.7/standard-all/ckeditor.js"></script>-->
-<!--<script src="http://cdn.ckeditor.com/4.4.7/standard-all/adapters/jquery.js"></script>-->
-<!---->
-<!--<script>--><?php //include_once ROOT . "/views/app/jquery.js" ?><!--</script>-->
-
-
-
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor_1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-    ClassicEditor
-        .create( document.querySelector( '#editor_2' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
 </body>
-</html><?php
+</html>
