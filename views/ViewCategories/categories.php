@@ -25,7 +25,7 @@
     <header class="f-col no_wrap justify-evenly align-center w_100">
         <div class="f-row justify-between align-center welcome w_100">
             <div id="welcome" class="welcome"></div>
-            <h2 class="black">Shop</h2>
+            <a href="http://shop-template.vinash.netxi.in"><h2 class="black">Shop</h2></a>
             <button class="btn btn-success" id="exit">Выйти</button>
         </div>
         <div class="navigation f-row justify-center align-center w_100">

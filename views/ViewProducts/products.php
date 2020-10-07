@@ -10,20 +10,13 @@
 
     <!-- Compiled and minified CSS -->
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
-    <!--Import materialize.css-->
-<!--    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>-->
+
     <link rel="stylesheet" href="/views/css/reset.css">
     <link rel="stylesheet" href="/views/css/fonts.css">
     <link rel="stylesheet" href="/views/css/main.css">
     <link rel="stylesheet" href="/views/css/style.css">
     <link rel="stylesheet" href="/views/css/navigation.css">
     <link rel="stylesheet" href="/views/ViewProducts/css/products_style.css">
-
-<!--    <style>--><?php //include_once ROOT . "/views/css/fonts.css" ?><!--</style>-->
-<!--    <style>--><?php //include_once ROOT . "/views/css/main.css" ?><!--</style>-->
-<!--    <style>--><?php //include_once ROOT . "/views/css/style.css" ?><!--</style>-->
-<!--    <style>--><?php //include_once ROOT . "/views/css/navigation.css" ?><!--</style>-->
-<!--    <style>--><?php //include_once ROOT . "/views/ViewProducts/css/products_style.css" ?><!--</style>-->
 
 
     <title>Товары</title>
@@ -33,7 +26,7 @@
     <header class="f-col no_wrap justify-evenly align-center w_100">
         <div class="f-row justify-between align-center welcome w_100">
             <div id="welcome" class="welcome"></div>
-            <h2 class="black">Shop</h2>
+            <a href="http://shop-template.vinash.netxi.in"><h2 class="black">Shop</h2></a>
             <button class="btn btn-success" id="exit">Выйти</button>
         </div>
         <div class="navigation f-row justify-center align-center w_100">
@@ -58,17 +51,17 @@
     </header>
     <!---------------------------------->
     <main class="container-fluid f-col">
-        <div class="f-row justify-center">
+        <div class="f-row w_100 justify-center ">
             <h2>Создать или изменить товар</h2>
         </div>
-        <div class="f-row justify-between align-center">
+        <div class="f-row w_100 justify-between align-center">
             <a href="#product_modal"><button class="btn f-row justify-between align-center  p-2"><i class="medium material-icons">add</i>Добавить товар&nbsp;</button></a>
             <div class="col-4 p-2">
                 <input onkeyup="tableSearchProduct()" class="form-control mr-sm-3" id="searchProduct" type="search" placeholder="Поиск по таблице" aria-label="Search">
             </div>
         </div>
 
-        <div class="col border-warning">
+        <div class="f-col w_100 border-warning align-center justify-center">
             <table class="tableProducts w_100"></table>
         </div>
 
@@ -223,26 +216,26 @@
         language: 'ru',
         browser_spellcheck: true,
         plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar: 'image align-center align-justify align-left align-left change-case color-picker color-levels format  casechange checklist code formatpainter pageembed permanentpen table',
         toolbar_mode: 'floating',
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
-        init_instance_callback : function(editor) {
-            console.log('Editor: ' + editor.id + ' is now initialized.');
-        }
+        // init_instance_callback : function(editor) {
+        //     console.log('Editor: ' + editor.id + ' is now initialized.');
+        // }
     });
     tinymce.init({
         selector: '#full_description',
         language: 'ru',
         browser_spellcheck: true,
         plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar: 'casechange checklist code formatpainter pageembed permanentpen table',
         toolbar_mode: 'floating',
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
-        init_instance_callback : function(editor) {
-            console.log('Editor: ' + editor.id + ' is now initialized.');
-        }
+        // init_instance_callback : function(editor) {
+        //     console.log('Editor: ' + editor.id + ' is now initialized.');
+        // }
     });
 </script>
 <!----------------------------------------end tinymce-------------------------------------------------------->

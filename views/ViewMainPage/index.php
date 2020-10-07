@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style><?php include_once ROOT . "/views/css/reset.css"?></style>
-    <style><?php include_once ROOT . "/views/css/fonts.css"?></style>
-    <style><?php include_once ROOT . "/views/css/main.css"?></style>
-    <style><?php include_once ROOT . "/views/css/style.css"?></style>
-    <style><?php include_once ROOT . "/views/css/modal.css" ?></style>
+    <link rel="stylesheet" href="/views/css/reset.css">
+    <link rel="stylesheet" href="/views/css/fonts.css">
+    <link rel="stylesheet" href="/views/css/main.css">
+    <link rel="stylesheet" href="/views/css/style.css">
+    <link rel="stylesheet" href="/views/css/modal.css">
+    <link rel="stylesheet" href="/views/css/navigation.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6c7f1b339a.js" crossorigin="anonymous"></script>
     <title>Shop</title>
 </head>
 <body>
 <div class="full_container">
-    <header class="f-row no_wrap justify-evenly align-center">
-          <h1>Shop</h1>
-         <div id="exchange"></div>
-         <div>
-            <a href="#modal"><button class="btn btn-primary">Войти/Регистрация</button></a>
-         </div>
+    <header class="f-col">
+        <div class="f-row no_wrap justify-evenly align-center">
+            <h1>Shop</h1>
+            <div id="exchange"></div>
+            <div>
+                <a href="#modal"><button class="btn btn-primary">Войти/Регистрация</button></a>
+            </div>
+        </div>
     </header>
+    <div class="nav-bar">
+        <div class="navigation">
+            <ul class="nav">
+                <li id="shop" class="submenu-link nav-item"><a href="#">Магазин</a></li>
+                <li class="nav-item"><a href="#">Доставка и оплата</a></li>
+                <li class="nav-item"><a  href="#">Корзина</a></li>
+            </ul>
+        </div>
+    </div>
     <main></main>
     <footer></footer>
 </div>
@@ -84,84 +97,10 @@
         </footer>
     </div>
 </div>
-<!---->
-<!--<header class="hederContainer">-->
-<!--    <button class="top topHide">&lt;</button>-->
-<!--    <div class="userHeader">-->
-<!---->
-<!--        <div class="headerItem">-->
-<!--            <div>-->
-<!--                <img src="/views/img/smiley-eating.png" alt="logo__company">-->
-<!--            </div>-->
-<!--            <div class="slogan">-->
-<!--                <p>Главное</p>-->
-<!--                <p>иметь</p>-->
-<!--                <p>мечту</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="headerItem">-->
-<!--            <div class="navigation_group_mobile">-->
-<!--                <div class="menu">-->
-<!--                    <input type="checkbox" class="hide" id="menu_logo">-->
-<!--                    <div class="logo_menu">-->
-<!--                        <label for="menu_logo">-->
-<!--                            <p></p>-->
-<!--                            <p></p>-->
-<!--                            <p></p>-->
-<!--                        </label>-->
-<!--                        <p>МЕНЮ</p>-->
-<!--                    </div>-->
-<!--                    <div class="elements_menu">-->
-<!--                        <ul>-->
-<!--                            <li class="countPeoples">Нас уже: <span class="users"></span></li>-->
-<!--                            <li>О нас</li>-->
-<!--                            <li><a href="#progects">Наши проекты</a></li>-->
-<!--                            <li><a href="#contacts">Контакты</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            ++-->
-<!--            <div class="nav">-->
-<!--                <ul class="navigation">-->
-<!--                    <li class="countPeoples">Нас уже: <span class="users"></span></li>-->
-<!--                    <li>О нас</li>-->
-<!--                    <li><a href="#progects">Наши проекты</a></li>-->
-<!--                    <li><a href="#contacts">Контакты</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</header>-->
-<!--<main>-->
-<!--    <div class="_container">-->
-<!--        <div id="exchange"></div>-->
-<!---->
-<!--        <div id="progects"></div>-->
-<!--    </div>-->
-<!--</main>-->
-<!---->
-<!--<footer class="footer">-->
-<!--    <div class="_container">-->
-<!--        <div class="map"></div>-->
-<!--        <div class="contacts" id="contacts">-->
-<!--            <div class="address"></div>-->
-<!--            <div class="phone"></div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</footer>-->
-<!----------------------------------------------------------------->
-<!--<div class="section modal__certificate none">-->
-<!--    <div class="modal__content__certificate">-->
-<!--        <img src="/views/img/page.jpg" alt="свидетельство">-->
-<!--        <input type="button" class="closeModalCertificate" value="X">-->
-<!--    </div>-->
-<!--</div>-->
 
-<!--<script>--><?php //include_once ROOT . "/views/ViewMainPage/app/app.js"?><!--</script>-->
-<!--<script>--><?php //include_once ROOT . "/views/ViewMainPage/app/modal_certificate.js"?><!--</script>-->
-<script><?php include_once ROOT . "/views/ViewMainPage/app/modalApp.js"?></script>
-<script><?php include_once ROOT . "/views/ViewMainPage/app/exchange.js"?></script>
+
+<script src="/views/ViewMainPage/app/exchange.js"></script>
+<script src="/views/ViewMainPage/app/modalApp.js"></script>
+<script src="/views/ViewMainPage/app/app.js"></script>
 </body>
 </html>

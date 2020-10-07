@@ -106,7 +106,9 @@
       <workItem from="1601724016341" duration="7430000" />
       <workItem from="1601753675597" duration="2264000" />
       <workItem from="1601795885478" duration="17720000" />
-      <workItem from="1601899325093" duration="23362000" />
+      <workItem from="1601899325093" duration="23416000" />
+      <workItem from="1601983843208" duration="27099000" />
+      <workItem from="1602047541687" duration="11862000" />
     </task>
     <servers />
   </component>
@@ -118,17 +120,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="95" key="#Inspections" timestamp="1601555609563">
+    <state x="452" y="95" key="#Inspections" timestamp="1601993095163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601555609563" />
+    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601993095163" />
     <state x="624" y="13" key="#PHP" timestamp="1601207178152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -145,22 +149,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="200" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601206897726" />
-    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1601913765285">
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1601928556196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
-    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1601913765285">
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601928556196" />
+    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1601928556196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
-    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1601913765285">
+    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601928556196" />
+    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1601928556196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
-    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1601913765285">
+    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601928556196" />
+    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1601928556196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601913765285" />
+    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601928556196" />
     <state x="608" y="294" key="NewPhpClassDialog" timestamp="1601797558936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -173,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601207139295" />
-    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1601636762349">
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1602010253635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601636762349" />
+    <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602010253635" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>D:\ПРОГРАММИРОВАНИЕ\DEVELOPMENT ENVIRONMENT\WP\wordpress-5.4.2\wordpress</wordpressPath>

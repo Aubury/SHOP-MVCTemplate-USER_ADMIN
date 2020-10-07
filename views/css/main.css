@@ -217,8 +217,13 @@ iframe{
     height: 100%;
 }
 .full_container{
-    width: 100vw !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    min-width: 100vw;
     overflow-x: hidden;
+    position: relative;
 }
 .container {
     width: 1200px;

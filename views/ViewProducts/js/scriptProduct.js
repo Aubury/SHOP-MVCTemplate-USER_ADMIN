@@ -196,10 +196,6 @@ obj.form.addEventListener('submit', function (ev) {
                 el.value = '';
             })
 
-           // let text_edits = document.querySelectorAll('.ck-content');
-           //     text_edits.forEach( el=>{
-           //         el.children.innerHTML = '';
-           //     })
             obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = data;
             setTimeout(()=>{
                 obj.modal_windows.querySelector('.block_forms').nextElementSibling.innerHTML = '';
@@ -294,15 +290,7 @@ function fillInputsFormPrd(arr) {
             }
         }
     }
-    // for (let i = 0; i < text_edits.length; i++){
-    //     while(text_edits[i].hasChildNodes()){
-    //         text_edits[i].removeChild(text_edits[i].firstChild);
-    //     }
-    //     text_edits[i].innerHTML = arr_edit[i];
-    // }
-
 }
-
 
 //----------------------------------------------------------------------------------------------------
 

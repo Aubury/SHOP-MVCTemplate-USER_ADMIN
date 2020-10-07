@@ -27,7 +27,7 @@ return[
     "inf/orders"     => "Orders/TotalOrders/adm",
     "inf/Categories" => "Categories/TotalCategories/adm",
     "inf/brands"     => "Brands/TotalBrands/adm",
-    "inf/products"   => "Products/TotalProducts/adm",
+    "inf/products"   => "Products/TotalProducts/none",
 
 
     "login-admin"    => "Login/ShowLogInAdmin/none",
